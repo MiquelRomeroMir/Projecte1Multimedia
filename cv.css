@@ -1,0 +1,565 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+/*Estils generals */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;/*Aseguro que no s'expandira el padding*/
+    font-family:'Popins',sans-serif;
+}
+/*Estil body*/
+body{
+    width:100%;
+    height:100vh;
+    overflow-x:hidden;/*Oculta l'scroll horitzontal*/
+    background-color:#0F0F0F;
+}
+/*Estil de la barra de navegacio*/
+nav{
+    width: 100%;
+    height: 10vh;/*altura per la nav de 10vh*/
+    align-items: center;
+    position: fixed;/*fixo la barra de navegacio pq es mantingui al fer scroll*/
+    background-color: #0F0F0F;
+}
+/*Barra navegacio centrada i amb z index 1 pq es mantingui al fer scroll */
+.barra_navegacio{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.barra_navegacio ul{
+    list-style: none;
+    display: flex;
+    gap:90px;
+    margin:0;
+    padding: 0;
+}
+/*Estil links de la barra */
+.barra_navegacio ul li a{
+    text-decoration: none;
+    color:#FFFFFF;
+    font-size:1rem;
+    font-weight: 500;
+}
+.barra_navegacio ul li.active a{
+    color:#3976FA;
+}
+/*Hover per cambiar color al blau al estar actiu */
+.barra_navegacio ul li a:hover{
+    color:#3976FA;
+}
+.barra_navegacio ul{
+    margin: 0 auto;
+}
+.barra_navegacio .logo img{
+    margin-left: 20px;
+    width: 100px;
+    filter: drop-shadow(2px 2px 2px);
+}
+/*Estils generals per les seccions*/
+section{
+    width: 100%;
+    height: 90vh;
+}
+.presentacio{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+/*Contingut principal de la presentacio a la seccio home*/
+.presentacio .contingut-principal{
+    color: white;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+.contingut-principal h1{
+    font-size: clamp(2rem,1rem+5vw,4rem);
+    color: white;
+}
+.contingut-principal h2{
+    color:#3976FA;
+    font-size: clamp(2rem,1rem+5vw,3.5rem);
+}
+.contingut-principal p{
+    margin-top: 10px;
+    color:#808080;
+}
+.contingut-principal .contact{
+    display: flex;
+    margin: 20px 10px;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 7vh;
+}
+/*Estil del boto de contact me centrat*/
+.button-mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50%;
+    margin-left:10px;
+    border:none;
+    outline: none;
+    border-radius:10px;
+    box-shadow: 0 0 1rem #3976FA;/*sombra pel boto*/
+    background: #3976FA;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 0 2px;
+    text-decoration: none;
+    transition: 0.5s/*transicio pel hover*/
+    
+}
+.button-mail:hover{/*hover per treue la sombra*/
+    box-shadow: none;
+}
+.icons{
+    display: flex;
+    gap:15px;
+    align-items:flex-start;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+}
+/*Estil per les icones del box icons de la classe icons*/
+.icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid #3976FA;/*contorn blau*/
+    border-radius: 50%;/*faig rodo el frame*/
+    font-size: 1.5rem;
+    color:#3976FA
+}
+/*Hover de les icones*/
+.icons i:hover{
+    background-color: #3976FA;/*Cambio el color de transparent a el blau*/
+    color:#0F0F0F;
+    box-shadow: 0 0 1rem #3976FA;
+
+}
+.imatge{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imatge img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;/*ajusto sense distorsionar*/
+    border-radius: 20px;
+}
+
+
+/*Part about */
+
+.About .information{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;/*psoiciono la informacio al principi*/
+    width: 80%;
+    margin: 0 auto;
+}
+.About .information .imatge-about{
+    width: 40%;
+    margin-right:5%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+
+}
+section .titol{
+    display: flex;
+    justify-content: center;
+    margin-bottom:70px;
+}
+section .titol h1{
+    color:#FFFFFF;
+    font-size:30px;
+    font-weight: 600;
+    position: relative;
+    border-bottom: 2px solid #3976FA;/*poso que es maqui de color blau la part baixa de h1*/
+    padding-bottom: 10px;
+}
+/*Estil per la imatge de la seccio about*/
+.About .information .imatge-about img{
+    height: auto;
+    max-width: 80%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.About .information .text-about{
+    width: 50%;
+    display: flex;
+    flex-direction: column;/*text alinead en columna*/
+}
+.About .information .text-about h2{
+    color:#FFFFFF;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.information .text-about p{
+    text-align:justify;
+    color: #808080;;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.caracteristiques{
+    display: flex;
+    flex-direction: column;/*alinea els del contenido en columna*/
+    gap: 20px;
+}
+.caracteristiques .informacio{
+    display: flex;
+    align-items: center;
+}
+.caracteristiques .informacio .etiqueta{
+    font-weight: 300;
+    color: #808080;
+    width: 150px;
+}
+.caracteristiques .informacio .colon{
+    color:#3976FA;
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+}
+.caracteristiques .informacio .valor{
+    color:#808080
+}
+/*Estil boto descarrega*/
+.boto-descarrega{
+    display: inline-block; 
+    padding: 12px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem #3976FA;
+    background: #3976FA;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-size: 16px; 
+    text-align: center; 
+    transition: 0.5s;
+    width: auto; 
+    max-width: 300px; 
+    margin-top: 20px; 
+    text-decoration: none;
+}
+.boto-descarrega:hover{
+    box-shadow: none;/*trec sombra*/
+}
+
+
+/*Part skills*/
+
+.container{
+    max-width: 1260px;
+    background-color: #0F0F0F;
+    margin-inline: auto;
+    padding-inline:0.75rem;
+}
+/*Definexio grid que usare en aquesta seccio*/
+.grid{
+    display: grid;
+    gap:1.75rem;
+}
+
+.titols_skills{
+    color: white;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;/*si fa falta es salta una skill salta de linia*/
+}
+.language,.skills{
+    font-size: 20px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+.contingut-skills{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.titol_skills{
+    margin-bottom: 30px;
+    display:flex;
+    align-items: center;
+}
+.skill{
+    width: 100%;
+    max-width: 600px;
+    padding:0 20px;
+    margin-bottom: 30px;
+}
+.skill:first-of-type{
+    margin-top:50px;
+}
+.name{
+    text-align: left;
+    font-size:15px;
+    font-weight: 700;
+    color:white;
+    text-transform: uppercase;/*que es mostri en majuscules*/
+    margin:10px 0;
+}
+
+.barra{
+    height:8px;
+    background:#282828 ;/*fons fosc barra*/
+    border-radius: 3px;
+}
+.skill-per{
+    height:8px;
+    background: #3976FA;/*color blau pel progres*/
+    border-radius: 3px;
+    position: relative;/*ubicar de forma interna*/
+}
+.conjunt_cercle{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);/*defineixo columnes*/
+    gap:80px;
+    justify-items: center;
+    align-items: center;
+}
+.casella{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.casella .qualitat{
+    margin-top: 20px;
+
+}
+.casella .cercle .percentatge{
+    color:white;
+    position: absolute;
+}
+/*Estil dels cercles*/
+.cercle{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+/*diferents ids degut a que son percentatges diferents*/
+#cercle1{
+    background: conic-gradient(#3976FA 0deg 324deg, white 324deg 360deg);
+}
+#cercle2{
+    background: conic-gradient(#3976FA 0deg 252deg, white 252deg 360deg);
+}
+#cercle3{
+    background: conic-gradient(#3976FA 0deg 306deg, white 30deg 360deg);
+}
+.cercle::before{
+    content:"";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: #020B11;
+    border-radius: 50%;
+}
+
+/*Part experience*/
+
+
+.Experience{
+    display: grid;/*Model de cuadricula */
+    grid-template-columns: 1fr 1fr;/*Definexio dos columnas */
+    grid-column-gap:90px ;/*Espai entre columnes*/
+}
+.columna h1{
+    color:#3976FA;
+    margin-bottom: 70px;
+}
+.casella_info{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+.casella_info h4{
+    position: relative;
+    color:#3976FA;
+    font-weight: 300;
+    margin:10px 0;
+}
+.casella_info h2{
+    font-size: 19px;
+    padding: 10px 0px 6px;
+}
+.casella_info p{
+    line-height: 1.2;
+    color:#808080;
+    margin:10px 0
+}
+.columna .contingut .casella_info{
+    position: relative;
+    padding: 20px;
+    background-color: #282828;
+    margin-bottom:20px;
+    border-radius: 0.25rem;
+}
+.lloc{
+    color: #3976FA;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/*Part idiomes*/
+
+.caixa-idiomes{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap:50px;
+    flex-wrap: wrap;
+    margin-top: 150px;
+
+}
+.idioma{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    height: 250px;
+    background-color: #282828;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;/*Transicio 3s de la sombra */
+}
+/*Hover per cada idioma*/
+.idioma:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(57, 118, 250, 0.3);
+    background-color: #313131;
+}
+.idioma .icona-idioma img{
+    color:#3976FA;
+    height: auto;
+    margin-bottom: 25px;
+}
+.text-idioma h3{
+    margin-bottom:15px ;
+    color:#FFFFFF
+}
+.idioma .text-idioma{
+    color:#808080;
+    text-align: center;
+}
+
+.idioma .icona-idioma b{
+    display: inline-block;
+    padding:12px 12px;
+    background-color: #282828;
+    color:#3976FA;
+    border-radius: 50%;
+    border:2px solid #3976FA;
+    font-size: 18px;
+}
+
+/* Part projectes */
+
+.primera-fila{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap:50px;
+    flex-wrap: wrap;
+}
+.segona-fila{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.frame{
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 250px;
+    background-color: #282828;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #0F0F0F;
+}
+.frame img{
+    width: 100%;
+    transition: .5s ease;
+}
+.frame:hover img{
+   transform:scale(1.1) ; 
+}
+
+.frame .informacio-frame{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(rgba(0,0,0,.1), #3976FA);/*transicio de colors entre transparent i el blau*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 4rem;
+    transform: translateY(100%);/*Moc pq no es vegi la informacio inicialment*/
+    transition: .5s ease;
+}
+/*Faig apareixer la info*/
+.frame:hover .informacio-frame{
+    transform: translateY(0%);
+}
+.informacio-frame h3{
+    font-size: 25px;
+    color:white;
+    margin-bottom: 20px;
+}
+.informacio-frame p{
+    font-size: 18px;
+    color: white;
+}
+.informacio-frame a{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height: 50px;
+    text-decoration: none;
+    background: white;
+    border-radius: 50%;
+}
+.informacio-frame a i{
+    font-size: 30px;
+    color: #313131;
+}
