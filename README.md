@@ -57,3 +57,5 @@ Finally, I designed the Projects section with three rectangles.
 Since the number was odd, I placed the third project in the center and the other two below.
 Initially, I didn’t use hover effects, but later I added a transition where a gradient appears from the bottom with project
 details and a link to a PDF for more information.
+
+Link figma:https://www.figma.com/design/pEHQhaNrdn4TJXtImloZSU/Untitled?node-id=0-1&t=vfxWFyKg0DfmsLjM-1
